@@ -21,7 +21,7 @@ drivers.manage().window().maximize();
 WebElement sign=drivers.findElement(By.xpath("//*[@id='nav-link-accountList']"));
 Actions action=new Actions(drivers);
 action.moveToElement(sign).build().perform();
-drivers.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+//drivers.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
 WebElement kindle=drivers.findElement(By.linkText("Music Library"));
 action.moveToElement(kindle).click().build().perform();
