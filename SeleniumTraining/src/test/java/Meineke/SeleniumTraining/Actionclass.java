@@ -23,8 +23,8 @@ Actions action=new Actions(drivers);
 action.moveToElement(sign).build().perform();
 //drivers.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
-WebElement kindle=drivers.findElement(By.linkText("Music Library"));
-action.moveToElement(kindle).click().build().perform();
+WebElement Music=drivers.findElement(By.linkText("Music Library"));
+action.moveToElement(Music).click().build().perform();
 drivers.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 drivers.close();
 	}
