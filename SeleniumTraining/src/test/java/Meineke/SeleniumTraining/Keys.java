@@ -1,5 +1,8 @@
 package Meineke.SeleniumTraining;
 
+import java.security.Key;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -15,22 +18,24 @@ public class Keys {
 		driver=new ChromeDriver();
 		driver.navigate().to("https://amazon.com");
 		driver.manage().window().maximize();
-		WebElement searchbar=driver.findElement(By.id("twotabsearchtextbox"));
-		searchbar.sendKeys("computers");
+		
+		WebElement searchbx=driver.findElement(By.id("twotabsearchtextbox"));
+		searchbx.sendKeys("Computers");
+		Thread.sleep(3000);
+		
 		Actions action=new Actions(driver);
-		action.keyDown(org.openqa.selenium.Keys.CONTROL).sendKeys("a").keyUp(org.openqa.selenium.Keys.CONTROL).build().perform();
-		action.keyDown(org.openqa.selenium.Keys.CONTROL).sendKeys("c").build().perform();
-		Thread.sleep(3000);
+		action.keyDown(org.openqa.selenium.Keys.CONTROL).sendKeys("a").keyUp(org.openqa.selenium.Keys.CONTROL).perform();
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		
-		searchbar.clear();
-		Thread.sleep(3000);
-		searchbar.click();
-		Thread.sleep(3000);
-		action.keyDown(org.openqa.selenium.Keys.CONTROL).sendKeys("v").build().perform();
-	    WebElement search=driver.findElement(By.id("nav-search-submit-button"));
-	    search.click();
-		Thread.sleep(15000);
+		action.keyDown(org.openqa.selenium.Keys.CONTROL).sendKeys("x").keyUp(org.openqa.selenium.Keys.CONTROL).perform();
+		Thread.sleep(2000);
 		
+		action.keyDown(org.openqa.selenium.Keys.CONTROL).sendKeys("v").keyUp(org.openqa.selenium.Keys.CONTROL).perform();
+		Thread.sleep(2000);
+		
+		WebElement search=driver.findElement(By.id("nav-search-submit-button"));
+		action.moveToElement(search).click().build().perform();
+		Thread.sleep(3000);
 		driver.quit();
 	 
 	

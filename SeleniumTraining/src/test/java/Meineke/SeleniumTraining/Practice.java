@@ -1,5 +1,7 @@
 package Meineke.SeleniumTraining;
 
+import java.util.Iterator;
+import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -15,28 +17,27 @@ public static WebDriver driver;
 		// TODO Auto-generated method stub
 System.setProperty("webdriver.chrome.driver","C:\\Users\\15408\\git\\repository\\SeleniumTraining\\src\\Drivers\\chromedriver.exe");
 driver=new ChromeDriver();
-driver.navigate().to("https://www.amazon.com/");
+driver.navigate().to("https://rahulshettyacademy.com/AutomationPractice/");
+driver.manage().window().maximize();
+
+WebElement open=driver.findElement(By.id("openwindow"));
+open.click();
+Thread.sleep(3000);
+
+Set<String> handles=driver.getWindowHandles();
+Iterator<String> obj=handles.iterator();
+String first=obj.next();
+String second= obj.next();
+System.out.println(first);
+System.out.println(second);
+
+driver.switchTo().window(second);
 driver.manage().window().maximize();
 Thread.sleep(3000);
-//driver.navigate().refresh();
-String obj=driver.getWindowHandle();
-System.out.println(obj);
-String title=driver.getTitle();
-System.out.println(title);
+WebElement regis=driver.findElement(By.xpath("//*[text()='Register']"));
+regis.click();
 Thread.sleep(3000);
-WebElement list=driver.findElement(By.xpath("//*[@id='nav-link-accountList-nav-line-1']"));
-Actions sign=new Actions(driver);
-sign.moveToElement(list).build().perform();
-Thread.sleep(3000);
-
-WebElement music=driver.findElement(By.linkText("Music Library"));
-sign.moveToElement(music).build().perform();
-
-
-//WebElement cal=driver.findElement(By.id("d1-btn"));
-//cal.click();
-Thread.sleep(3000);
-driver.close();
+driver.quit();
 	}
 
 }

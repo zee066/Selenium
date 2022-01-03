@@ -4,14 +4,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class Alerts {
 static WebDriver drivers;
 
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
-System.setProperty("webdriver.chrome.driver", "C:\\Users\\15408\\eclipse-workspace\\SeleniumTraining\\src\\Drivers\\chromedriver.exe");
-drivers=new ChromeDriver();
+System.setProperty("webdriver.edge.driver", "C:\\Users\\15408\\git\\repository\\SeleniumTraining\\src\\Drivers\\msedgedriver.exe");
+drivers=new EdgeDriver();
 drivers.get("https://chercher.tech/practice/practice-pop-ups-selenium-webdriver"); //how to open browser window using .get instead of .navigate
 Thread.sleep(3000);	
 

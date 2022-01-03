@@ -28,6 +28,19 @@ WebElement dialog=driver.findElement(By.linkText("Dialog"));
 dialog.click();
 Thread.sleep(3000);
 
+WebElement re=driver.findElement(By.linkText("Resizable"));
+action.moveToElement(re).click().perform();
+driver.switchTo().frame(0);
+Thread.sleep(3000);
+
+WebElement resize=driver.findElement(By.xpath("//*[@class='ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se']"));
+action.dragAndDropBy(resize, 160, 60).build().perform();
+driver.switchTo().parentFrame();
+Thread.sleep(2000);
+
+WebElement dragg=driver.findElement(By.linkText("Draggable"));
+dragg.click();
+Thread.sleep(2000);
 driver.close();
 
 	}

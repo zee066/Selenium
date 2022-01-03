@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class Ibrowsers {
-public static WebDriver  drivers; //web driver is an interface
+public static WebDriver  drivers; //webdriver is an interface and drivers is a reference variable
 	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 System.setProperty("webdriver.chrome.driver", "C:\\Users\\15408\\eclipse-workspace\\SeleniumTraining\\src\\Drivers\\chromedriver.exe");
