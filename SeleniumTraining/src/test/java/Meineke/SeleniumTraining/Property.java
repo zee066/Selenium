@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 import Common.Utilities;
 
 public class Property extends Utilities {
+	public static WebDriver driver;
   @Test
   public void f() throws IOException {
 	  Properties obj=new Properties();
@@ -21,7 +22,7 @@ public class Property extends Utilities {
 	  obj.load(ob);
 	String name=  obj.getProperty("Username");
 	System.out.println(name);
-	List<WebElement> linked=driver.findElements(By.tagName("a"));
+	List<WebElement> linked=driver.findElements(By.tagName("a")); // how to get total number of a tags in facebook dom structure
 	System.out.println(linked.size());
   }  
   
